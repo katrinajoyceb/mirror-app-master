@@ -24,6 +24,7 @@ export class MirrorComponent implements OnInit {
           audio: false
         };
         var myCanvas = s.createCapture(constraints);
+        
         myCanvas.size(1440,1080)
         myCanvas.parent("mirror");
 
@@ -32,6 +33,7 @@ export class MirrorComponent implements OnInit {
 
       s.draw = () => {
         s.background(255);
+        
       };
     }
 

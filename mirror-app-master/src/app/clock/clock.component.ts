@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Activity } from '../mirror' ;
+import { MirrorService } from '../mirror.service';
+
 
 @Component({
   selector: 'app-clock',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockComponent implements OnInit {
 
-  constructor() { }
+  public now: Date = new Date();
+  CurrentTime: any;
+  activityList: Activity[];
+  stepsList: Number[]
 
-  ngOnInit() {
+  constructor(private mirrorService: MirrorService) {
+      setInterval(() => {
+        this.now = new Date();
+      }, 1);
   }
 
+  ngOnInit() {}
+
 }
+
+
+
